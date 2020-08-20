@@ -34,6 +34,7 @@ const AddTransaction = () => {
         const messaging = firebase.messaging();
         messaging.requestPermission()
         const token = await messaging.getToken();
+        alert(token)
         const response = await axios.post(
             'https://fcm.googleapis.com/fcm/send',
             {
