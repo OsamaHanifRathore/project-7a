@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from "./Components/Header";
+import Balance from "./Components/Balance";
+import IncomeExpenses from "./Components/IncomeExpense";
+import TransactionList from "./Components/TransactionList";
+import AddTransaction from "./Components/AddTransaction";
+import { GlobalProvider } from "./Components/context/GlobalState";
 import './App.css';
+// import firebase from './firebase'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // useEffect(() => {
+    //     const messaging = firebase.messaging()
+    //     messaging.requestPermission()
+    //         .then(() => {
+    //             console.log("have permision");
+    //             return messaging.getToken()
+    //         })
+    //         .then((token) => {
+    //             console.log('token', token)
+    //         })
+    //         .catch(() => {
+    //             console.log("not");
+    //         })
+    // }, [])
+    return (
+        <GlobalProvider>
+            <Header />
+            <div className="container">
+                <Balance />
+                <IncomeExpenses />
+                <TransactionList />
+                <AddTransaction />
+            </div>
+        </GlobalProvider>
+    );
 }
 
 export default App;
