@@ -3,19 +3,29 @@
   "name": "Expence Tracker by Dawood Sadiq",
   "icons": [
     {
-      "src": "https://zh-exp-tracker.netlify.app/images/icons/icon-192x192.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "logo128",
+      "sizes": "128x128",
+      "type": "image/png"
     },
     {
-      "src": "https://zh-exp-tracker.netlify.app/images/icons/icon-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "logo144",
+      "sizes": "144x144",
+      "type": "image/png"
     },
     {
-      "src": "https://zh-exp-tracker.netlify.app/images/icons/icon-192x192.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "logo152",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "logo192x192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo256",
+      "sizes": "256x256",
+      "type": "image/png"
     }
   ],
   "gcm_sender_id": "153542201034",

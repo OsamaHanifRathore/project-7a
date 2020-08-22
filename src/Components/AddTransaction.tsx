@@ -8,6 +8,27 @@ const AddTransaction = () => {
     const [textDesc, setText] = useState('');
     const [changeableAmount, setAmount] = useState(0);
     const { addTrans } = useContext(GlobalContext);
+
+    async function sendNotification() {
+        const messaging = firebase.messaging();
+        messaging.requestPermission()
+        const token = await messaging.getToken();
+        const response = await axios.post(
+            'https://fcm.googleapis.com/fcm/send',
+            {
+                notification: {
+                    title: "Expense Tracker by dawood",
+                    body: "Save some money, you have low balance.",
+                    click_action: "",
+                    icon: 'https://zh-exp-tracker.netlify.app/images/icons/icon-192x192.png',
+                },
+                "to": token
+            },
+            { headers: { 'Content-Type': 'application/json', 'Authorization': 'key=AAAAI7_UDso:APA91bEp661TgU4IB5ph6F2e7zA-YD2zr28df9ZGjikqmB3lesWQI4GImcaLfAeJxm2lVqFM0aHB-HrQAuvFpurDOBa9fp59dIbPsGWe2yaSaxsA_BWfKqoO7rhTyCp3kEAWdqEehc0f' } }
+        );
+        console.log('Response: ', response);
+    }
+
     const AddIncome = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
 
@@ -30,25 +51,6 @@ const AddTransaction = () => {
 
     };
 
-    async function sendNotification() {
-        const messaging = firebase.messaging();
-        messaging.requestPermission()
-        const token = await messaging.getToken();
-        const response = await axios.post(
-            'https://fcm.googleapis.com/fcm/send',
-            {
-                notification: {
-                    title: "Expense Tracker by dawood",
-                    body: "Save some money, you have low balance.",
-                    click_action: "",
-                    icon: 'https://zh-exp-tracker.netlify.app/images/icons/icon-192x192.png',
-                },
-                "to": token
-            },
-            { headers: { 'Content-Type': 'application/json', 'Authorization': 'key=AAAAI7_UDso:APA91bEp661TgU4IB5ph6F2e7zA-YD2zr28df9ZGjikqmB3lesWQI4GImcaLfAeJxm2lVqFM0aHB-HrQAuvFpurDOBa9fp59dIbPsGWe2yaSaxsA_BWfKqoO7rhTyCp3kEAWdqEehc0f' } }
-        );
-        console.log('Response: ', response);
-    }
     sendNotification()
     return (
         <>
