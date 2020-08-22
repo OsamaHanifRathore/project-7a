@@ -3,27 +3,27 @@
   "name": "Expence Tracker by Dawood Sadiq",
   "icons": [
     {
-      "src": "logo128",
+      "src": "logo128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "logo144",
+      "src": "logo144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "logo152",
+      "src": "logo152.png",
       "sizes": "152x152",
       "type": "image/png"
     },
     {
-      "src": "logo192x192",
+      "src": "logo192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "logo256",
+      "src": "logo256.png",
       "sizes": "256x256",
       "type": "image/png"
     }
