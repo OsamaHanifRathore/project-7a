@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { GlobalContext } from "./context/GlobalState"
 import axios from 'axios';
 import firebase from '../firebase';
-// import { askForPermissioToReceiveNotifications } from '../notification';
 
 const AddTransaction = () => {
     const [textDesc, setText] = useState('');
