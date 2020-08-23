@@ -17,10 +17,10 @@ const AddTransaction = () => {
             'https://fcm.googleapis.com/fcm/send',
             {
                 notification: {
-                    title: "Expense Tracker by dawood",
-                    body: "Save some money, you have low balance.",
+                    title: "Expense Tracker by Dawood",
+                    body: "You Are Out Of Budget.",
                     click_action: "",
-                    icon: 'https://zh-exp-tracker.netlify.app/images/icons/icon-192x192.png',
+                    icon: 'https://github.com/dawood6/project-7a/blob/master/public/logo192x192.png?raw=true',
                 },
                 "to": token
             },
@@ -50,8 +50,9 @@ const AddTransaction = () => {
         addTrans(newTrans);
 
     };
-
-    sendNotification()
+    if (changeableAmount < 3000 && changeableAmount > 0) {
+        sendNotification()
+    }
     return (
         <>
             <h3>Add new Transaction</h3>
